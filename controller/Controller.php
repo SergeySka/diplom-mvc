@@ -63,6 +63,8 @@ if (isset($_SESSION['user_id'])) {
 
         }
     }
+    $table_no_answer = Table::noAnswer();
+    include 'views/no_answer.php';
 
 }
 if (isset($_POST['user_question'], $_POST['user_category'], $_POST['user_mail'], $_POST['user_name'])) {
