@@ -28,7 +28,7 @@
         <?php if (($row['id'] == $value['category_id']) && ($value['is_hidden'] == 1)) : ?>
             <input class="hide" id="<?= $value['id'] ?>" type="checkbox">
             <label for="<?= $value['id'] ?>"><?= $value['question'] ?></label>
-            <div>Здесь будет ответ</div>
+            <div><?= $value['answer'] ?></div>
             <br>
         <?php endif ?>
     <?php } ?>
