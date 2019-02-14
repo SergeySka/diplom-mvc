@@ -107,10 +107,11 @@ class Table
         $stmt = Di::get()->db()->prepare("DELETE FROM category WHERE id=" . $_GET['category_id'] . "");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // не работает
-        $stm = Di::get()->db()->prepare("DELETE FROM main WHERE category_id=" . $_GET['category_id'] . "");
-        $stm->execute();
-        return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public static function delCategoryTwo()  {
+        $stmt = Di::get()->db()->prepare("DELETE FROM main WHERE category_id=" . $_GET['category_id'] . "");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
