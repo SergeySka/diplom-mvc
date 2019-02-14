@@ -31,6 +31,7 @@ if (isset($_SESSION['user_id'])) {
     include 'views/describe_questions.php';
     if (isset($_GET['del'], $_GET['category_id'])) {
         $delCategory = Table::delCategory();
+        $delCategory = Table::delCategoryTwo();
     }
     include 'views/new_category.php';
     if (isset($_POST['new_category'])) {
