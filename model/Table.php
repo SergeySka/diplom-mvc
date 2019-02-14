@@ -225,6 +225,17 @@ class Table
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     }
+    /**
+     * список вопроса в порядке добавления
+     * @return array
+     */
+    public static function noAnswer()
+    {
+        $stmt = Di::get()->db()->prepare("SELECT * FROM main WHERE answer = '' ORDER BY YEAR(date_added) ASC, MONTH(date_added) ASC,DAY(date_added) ASC");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
 
 
 }
