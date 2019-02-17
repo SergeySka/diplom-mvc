@@ -1,3 +1,134 @@
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0; /* обнуляем отступы и убираем бордюры */
+    vertical-align: baseline; /* приводим все к одной базовой линии */
+    background: transparent; /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+    font-size: 100%; /* размер шрифта всем одинаковый */
+}
+
+a { /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+}
+
+table { /* устраняем отступы между ячейками таблицы */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, td img {
+    vertical-align: top; /* возвращаем привычное вертикальное выравнивание */
+}
+
+input, select, button, textarea {
+    margin: 0; /* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+    font-size: 100%; /* делаем размер шрифтов везде одинаковым */
+    outline: none;
+}
+
+input[type="text"], input[type="password"], textarea {
+    padding: 0; /* убираем внутренние отступы для текстовых полей */
+}
+
+input[type="checkbox"] { /* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+}
+
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+    min-height: 100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+
+body {
+    color: #285473;
+    text-align: left;
+    font-family: 'Merriweather', serif;
+    font-size: 16px; /* используем безопасные шрифтовые CSS стеки */
+    min-height: 100%;
+    max-width: 1920px;
+    background-color: #edeef0;
+}
+
+a, a:visited { /* порядок правил для ссылок имеет значение */
+    color: #285473;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #1f6685;
+    text-decoration: none;
+}
+
+a:focus, a:active {
+    color: #3c6485;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #262322;
+}
+
+img {
+
+    max-width: 100%;
+}
+
+.clr {
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section.center {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* скрываем чекбоксы и блоки с содержанием */
 .hide, .hide + label ~ div {
     display: none;
@@ -6,24 +137,145 @@
 /* вид текста label */
 .hide + label,
 .hide:checked + label {
-    padding: 0;
-    color: green;
+    color: #3f7788;
     cursor: pointer;
-    border-bottom: 1px dotted green;
+    border-bottom: 1px dotted #073c80;
+
 }
 
 /* вид текста label при активном переключателе */
 .hide:checked + label {
-    color: red;
+    color: #006488;
     border-bottom: 0;
 }
 
 /* когда чекбокс активен показываем блоки с содержанием  */
 .hide:checked + label + div {
+
     display: block;
-    background: #efefef;
-    -moz-box-shadow: inset 3px 3px 10px #7d8e8f;
-    -webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
-    box-shadow: inset 3px 3px 10px #7d8e8f;
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #c5dbde;
+    -moz-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 0 0 #fff;
+    -webkit-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 0 0 #fff;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 0 0 #fff;
     padding: 10px;
+    color: #477e88;;
+}
+
+
+div.new_question {
+    width: 460px;
+    background: #f0f5f6;
+    box-shadow: inset 0 -1px 1px 0 #fff, 0 10px 10px -10px #c5dbde;
+    padding: 10px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.inline div {
+    display: inline-block;
+    width: 49%;
+}
+
+.last_line div {
+    display: inline-block;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.new_question form {
+    width: 439px;
+}
+
+input, textarea {
+    border: 1px solid #c5dbde;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 0 0 #fff;
+    margin-top: 5px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+    padding: 1px 5px;
+}
+
+input[type=submit]:hover {
+    color: #1f886a;
+    background: #e8fdf4;
+}
+
+input[type=submit]:active {
+    box-shadow: inset 0 1px 3px 0 #c5dbde, 0 1px 0 0 #fff;
+}
+
+input[type=submit], select {
+    color: #477e88;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px #fff, 0 3px 5px -2px rgba(0, 0, 0, .1);
+    border: 1px solid #c5dbde;
+    background: #f9fcfd;
+    font-weight: 700;
+
+}
+
+::placeholder {
+    padding: 0 0 0 5px;
+    color: #477e88;
+    font-size: 0.7em;
+}
+
+input[type=text], textarea {
+    color: #477e88;
+    font-size: 1em;
+}
+
+ul.menu {
+    list-style: none;
+}
+
+ul.menu li {
+    float: left;
+    padding: 5px 10px 5px 0px;
+}
+
+div.forum h2 {
+    margin-top: 30px;
+    color: #477e88;
+    padding: 5px 0;
+}
+
+.describe_questions table, .admins table {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-collapse: separate;
+    border-spacing: 10px;
+    background: #f0f5f6;
+    box-shadow: inset 0 -1px 1px 0 #fff, 0 10px 10px -10px #c5dbde;
+    border-radius: 5px;
+
+}
+
+section.new_category {
+    margin-bottom: 30px;
+}
+
+section.no_answer thead, section.describe_category thead {
+    font-size: 0.8em;
+}
+
+.date_added {
+    font-size: 0.7em;
+}
+
+section.describe_category {
+    background: #f0f5f6;
+    box-shadow: inset 0 -1px 1px 0 #fff, 0 10px 10px -10px #c5dbde;
+    border-radius: 5px;
 }
